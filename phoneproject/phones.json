@@ -1,0 +1,21 @@
+[
+    {
+        "firstname": "Ankita",
+        "lastName": "Bhatnagar",
+        "phones": [
+            {"type":"home","number":"123456"},
+            {"type":"work","number":"876543"},
+            {"type":"work","number":"098654"}
+        ]
+    },
+    {
+        "firstname": "Laura",
+        "lastName": "Mietii",
+        "phones": [
+            {"type":"home","number":"543423"},
+            {"type":"mobile","number":"6565464"},
+            {"type":"work","number":"5464565"}
+        ]
+
+    }
+]

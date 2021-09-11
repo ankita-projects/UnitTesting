@@ -40,6 +40,98 @@ class ComputerStorage {
     });
     return computerTypes;
   }
+
+  getAllComputersByType(type) {
+    if (!type) {
+      throw new Error("parameter missing");
+    }
+    let computerObject = [];
+    this.dataStorage.forEach((element) => {
+      if (element.type == type) {
+        computerObject.push(element);
+      }
+    });
+    return computerObject;
+  }
+
+  hasAccessories(id) {
+    if (!id) {
+      return false;
+    }
+    let accessories = false;
+    this.dataStorage.forEach((element) => {
+      if (
+        element.id == id &&
+        element.accessories &&
+        element.accessories.length > 0
+      ) {
+        accessories = true;
+      }
+    });
+    return accessories;
+  }
+
+  GetComputerAccessories(id) {
+    let accessories = [];
+    if (!id) {
+      return accessories;
+    }
+    this.dataStorage.forEach((element) => {
+      if (element.accessories && element.accessories == accessories) {
+        accessories.push(element.accessories);
+      }
+    });
+    return accessories;
+  }
+
+  getPriceWithoutSoftware(id) {
+    if (!id) {
+      throw new Error("nothing found with given id");
+    }
+    let computerPrice;
+    this.dataStorage.forEach((element) => {
+      if (element.id == id && element.price && !element.software.price) {
+        computerPrice = element.price;
+      }
+    });
+    return computerPrice;
+  }
+  getTotalPrice(id) {
+    let computerFound = false;
+    let computerPrice = 0;
+    let softwarePrice = 0;
+    this.dataStorage.forEach((element) => {
+      if (element.id == id) {
+        computerFound = true;
+        computerPrice = element.price;
+        element.software.forEach((element) => {
+          softwarePrice = element.price + softwarePrice;
+        });
+      }
+    });
+    if (!computerFound) {
+      throw new Error("nothing found with given id");
+    }
+
+    return computerPrice + softwarePrice;
+  }
+
+  getPriceOfTheSoftware(id) {
+    let computerFound = false;
+    let softwarePrice = 0;
+    this.dataStorage.forEach((element) => {
+      if (element.id == id) {
+        computerFound = true;
+        element.software.forEach((element) => {
+          softwarePrice = element.price + softwarePrice;
+        });
+      }
+    });
+    if (!computerFound) {
+      throw new Error("nothing found with given id");
+    }
+    return softwarePrice;
+  }
 }
 
 let myComputerStorage = new ComputerStorage([
@@ -90,3 +182,9 @@ let myComputerStorage = new ComputerStorage([
 myComputerStorage.getById(2);
 myComputerStorage.getAllIdsByManufacturer("BMI");
 myComputerStorage.getAllComputerTypes();
+myComputerStorage.getAllComputersByType("laptop");
+myComputerStorage.hasAccessories(1);
+myComputerStorage.GetComputerAccessories(1);
+myComputerStorage.getPriceWithoutSoftware(2);
+myComputerStorage.getTotalPrice(2);
+myComputerStorage.getPriceOfTheSoftware(2);

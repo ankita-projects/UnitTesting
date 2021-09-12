@@ -77,7 +77,10 @@ class ComputerStorage {
       return accessories;
     }
     this.dataStorage.forEach((element) => {
-      if (element.accessories && element.accessories == accessories) {
+      if (element.id == id) {
+        element.accessories.forEach(element => {
+            return element.accessories
+        });
         accessories.push(element.accessories);
       }
     });

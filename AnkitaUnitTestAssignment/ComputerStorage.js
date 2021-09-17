@@ -1,4 +1,4 @@
-class ComputerStorage {
+module.exports = class ComputerStorage {
   constructor(jsonData) {
     if (!jsonData) {
       throw new Error("data storage missing");
@@ -137,7 +137,7 @@ class ComputerStorage {
   }
 }
 
-let myComputerStorage = new ComputerStorage([
+/*let myComputerStorage = new ComputerStorage([
   {
     id: 1,
     manufacturer: "BMI",
@@ -190,4 +190,4 @@ myComputerStorage.hasAccessories(1);
 myComputerStorage.GetComputerAccessories(1);
 myComputerStorage.getPriceWithoutSoftware(2);
 myComputerStorage.getTotalPrice(2);
-myComputerStorage.getPriceOfTheSoftware(2);
+myComputerStorage.getPriceOfTheSoftware(2); */

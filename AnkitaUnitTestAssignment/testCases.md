@@ -15,6 +15,8 @@ new ComputerStorage();
 
 Test exception `'datastorage is missing'`
 
+/********************/
+
 ## getById(id)
 
 ### Test 1: Method searches the datastorage for an object with given key. Key is unique
@@ -73,6 +75,8 @@ Return: returns the computer object matching the id or null if there is no match
 ### Test 2: if parameter is missing, throws an exception 'parameter missing'
 
 returns 'parameter missing'
+
+/********************/
 
 ## getAllIdsByManufacturer(value)
 
@@ -166,7 +170,7 @@ returns:
 ]
 ```
 
-### If no computer of given type is found, returns an empty array
+### Test 2:If no computer of given type is found, returns an empty array
 
 ```js
 myComputerStorage.getAllComputersByType("XYZ");
@@ -239,17 +243,17 @@ myComputerStorage.getPriceWithoutSoftware(2);
 Returns:
 350
 
-### Test 3: if no computer with the given number is found
+### Test 2: if no computer with the given number is found
 
 ```js
 myComputerStorage.getPriceWithoutSoftware(7);
 ```
-returns ' nothing found with given id'
 
+returns ' nothing found with given id'
 
 ## getTotalPrice(id)
 
-### Test 1:Return:  The price of the computer including the total price of the software
+### Test 1:Return: The price of the computer including the total price of the software
 
 ```js
 myComputerStorage.getTotalPrice(2);
@@ -268,7 +272,7 @@ returns ' nothing found with given id'
 
 ## getPriceOfTheSoftware(id)
 
-### Test 1:Return:  The price of the computer including the total price of the software
+### Test 1:Return: The price of the computer including the total price of the software
 
 ```js
 myComputerStorage.getTotalPrice(2);
@@ -284,4 +288,3 @@ myComputerStorage.getPriceWithoutSoftware(7);
 ```
 
 returns ' nothing found with given id'
-

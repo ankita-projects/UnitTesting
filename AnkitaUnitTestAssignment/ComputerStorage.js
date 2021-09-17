@@ -78,10 +78,9 @@ module.exports = class ComputerStorage {
     }
     this.dataStorage.forEach((element) => {
       if (element.id == id) {
-        element.accessories.forEach(element => {
-            return element.accessories
+        element.accessories.forEach((accessorie) => {
+          accessories.push(accessorie);
         });
-        accessories.push(element.accessories);
       }
     });
     return accessories;
@@ -99,6 +98,7 @@ module.exports = class ComputerStorage {
     });
     return computerPrice;
   }
+  
   getTotalPrice(id) {
     let computerFound = false;
     let computerPrice = 0;
@@ -135,7 +135,7 @@ module.exports = class ComputerStorage {
     }
     return softwarePrice;
   }
-}
+};
 
 /*let myComputerStorage = new ComputerStorage([
   {

@@ -161,4 +161,33 @@ describe("Testing getPriceWithoutSoftware(id)", () => {
   });
 });
 
+describe("Testing getTotalPrice(id)", () => {
+  const computerStorage = new ComputerStorage(data);
+
+  test("The price of the computer including the total price of the software", () => {
+    expect(computerStorage.getTotalPrice(2)).toEqual(380);
+  });
+
+  test("if no computer with the given number is found throws an exeption", () => {
+    expect(() => computerStorage.getTotalPrice(7)).toThrow(
+      "nothing found with given id"
+    );
+  });
+});
+
+describe("Testing getTotalPrice(id)", () => {
+  const computerStorage = new ComputerStorage(data);
+
+  test("The price of the computer including the total price of the software", () => {
+    expect(computerStorage.getPriceOfTheSoftware(1)).toEqual(133);
+  });
+
+  test("if no computer with the given number is found throws an exeption", () => {
+    expect(() => computerStorage.getPriceOfTheSoftware(7)).toThrow(
+      "nothing found with given id"
+    );
+  });
+});
+
+
 

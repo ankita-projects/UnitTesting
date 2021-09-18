@@ -98,7 +98,7 @@ module.exports = class ComputerStorage {
     });
     return computerPrice;
   }
-  
+
   getTotalPrice(id) {
     let computerFound = false;
     let computerPrice = 0;
@@ -136,58 +136,3 @@ module.exports = class ComputerStorage {
     return softwarePrice;
   }
 };
-
-/*let myComputerStorage = new ComputerStorage([
-  {
-    id: 1,
-    manufacturer: "BMI",
-    type: "minitower",
-    accessories: ["keyboard", "display", "mouse"],
-    price: 250,
-    software: [
-      {
-        name: "Writer",
-        price: 123,
-      },
-      {
-        name: "Solitaire",
-        price: 10,
-      },
-    ],
-  },
-  {
-    id: 2,
-    manufacturer: "CERA",
-    type: "laptop",
-    accessories: ["mouse"],
-    price: 350,
-    software: [
-      {
-        name: "Writer",
-        price: 10,
-      },
-      {
-        name: "Counter",
-        price: 20,
-      },
-    ],
-  },
-  {
-    id: 3,
-    manufacturer: "BMI",
-    type: "laptop",
-    accessories: [],
-    price: 150,
-    software: [],
-  },
-]);
-
-myComputerStorage.getById(2);
-myComputerStorage.getAllIdsByManufacturer("BMI");
-myComputerStorage.getAllComputerTypes();
-myComputerStorage.getAllComputersByType("laptop");
-myComputerStorage.hasAccessories(1);
-myComputerStorage.GetComputerAccessories(1);
-myComputerStorage.getPriceWithoutSoftware(2);
-myComputerStorage.getTotalPrice(2);
-myComputerStorage.getPriceOfTheSoftware(2); */

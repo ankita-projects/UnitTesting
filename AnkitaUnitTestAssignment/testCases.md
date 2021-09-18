@@ -265,7 +265,7 @@ Returns:
 ### Test 2: if no computer with the given number is found throws an exeption
 
 ```js
-myComputerStorage.getPriceWithoutSoftware(7);
+myComputerStorage.getTotalPrice(7);
 ```
 
 returns ' nothing found with given id'
@@ -275,7 +275,7 @@ returns ' nothing found with given id'
 ### Test 1:Return: The price of the computer including the total price of the software
 
 ```js
-myComputerStorage.getTotalPrice(2);
+myComputerStorage.getPriceOfTheSoftware(2);
 ```
 
 Returns:
@@ -284,7 +284,7 @@ Returns:
 ### Test 2: if no computer with the given number is found throws an exeption
 
 ```js
-myComputerStorage.getPriceWithoutSoftware(7);
+myComputerStorage.getPriceOfTheSoftware(7);
 ```
 
 returns ' nothing found with given id'
